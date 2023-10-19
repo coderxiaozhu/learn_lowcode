@@ -6,6 +6,8 @@ export class AllExceptionsFilter implements ExceptionFilter {
     const ctx = host.switchToHttp();
     const response = ctx.getResponse();
     const request = ctx.getRequest<Request>();
+
+    console.log(exception);
     
     // 非HTTP标准异常的处理
     response.status(HttpStatus.SERVICE_UNAVAILABLE).json({

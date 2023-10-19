@@ -8,7 +8,6 @@ export class HttpExceptionFilter implements ExceptionFilter {
     const response = ctx.getResponse();
     const request = ctx.getRequest();
     const status = exception.getStatus();
-
     // 处理业务异常
     if (exception instanceof BusinessException) {
       const error = exception.getResponse();

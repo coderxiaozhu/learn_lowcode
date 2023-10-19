@@ -1,2 +1,21 @@
-TEST_VALUE: 
-  name: cookie
+MONGODB_CONFIG:
+  name: "ignition_test"   # 自定义数据库名称
+  type: mongodb           # 数据库类型
+  url: "mongodb://localhost:27017"  # 数据库链接地址
+  username: "root"   # 数据库连接用户名
+  password: "root"  # 数据库连接密码
+  database: "fast_gateway_test"   # 数据库名称
+  entities: "mongo"   # 自定义加载类型
+  logging: false   # 数据库打印日志
+  synchronize: false # 自动同步数据库表
+MYSQL_CONFIG:
+  name: "material_test"
+  type: "mysql"
+  host: "localhost"
+  port: 3306
+  username: "root"
+  password: "root"
+  database: "material_test"
+  entities: "mysql"
+  logging: true
+  synchronize: true

@@ -6,8 +6,6 @@ import { AllExceptionsFilter } from './common/filter/exceptions/base.exception.f
 import { HttpExceptionFilter } from './common/filter/exceptions/http.exception.filter.ts/http.exception.filter.ts.filter';
 import { generateDocument } from './doc';
 
-declare const module: any;
-
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
@@ -19,16 +17,11 @@ async function bootstrap() {
  
   // 统一拦截器
   app.useGlobalInterceptors(new TransformInterceptor());
+  
   // 异常过滤器
   app.useGlobalFilters(new AllExceptionsFilter(), new HttpExceptionFilter())
 
   generateDocument(app)
-
-  // 热重载, 项目庞大时才使用
-  // if (module.hot) {
-  //   module.hot.accpt()
-  //   module.hot.dispose(() => app.close())
-  // }
 
   await app.listen(3000);
 }

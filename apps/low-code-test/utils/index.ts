@@ -7,8 +7,6 @@ export const getEnv = () => {
     return process.env.RUNNING_ENV
 }
 
-console.log(process.env.RUNNING_ENV)
-
 //  读取项目配置
 export const getConfig = () => {
     const environment = getEnv();
