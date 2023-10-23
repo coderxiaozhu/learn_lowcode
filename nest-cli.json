@@ -9,6 +9,9 @@
   },
   "monorepo": true,
   "root": "apps/low-code-test",
+  "generateOptions": {
+    "spec": false
+  },
   "projects": {
     "low-code-test": {
       "type": "application",
