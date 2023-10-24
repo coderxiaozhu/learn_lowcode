@@ -10,10 +10,10 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
   // 接口版本化管理
-  app.enableVersioning({
-    defaultVersion: [VERSION_NEUTRAL, "1", "2"],
-    type: VersioningType.URI
-  })
+  // app.enableVersioning({
+  //   defaultVersion: [VERSION_NEUTRAL, "1", "2"],
+  //   type: VersioningType.URI
+  // })
  
   // 统一拦截器
   app.useGlobalInterceptors(new TransformInterceptor());

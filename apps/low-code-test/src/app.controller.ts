@@ -26,28 +26,4 @@ export class AppController {
     return "I am new one";
   }
 
-  @Get("findError")
-  @Version([VERSION_NEUTRAL, '1'])
-  findError() {
-    const a: any = {};
-    console.log(a.b.c);
-    return this.appService.getHello();
-  }
-
-  @Get("findBusinessError")
-  @Version([VERSION_NEUTRAL, '1'])
-  findBusinessError() {
-    const a: any = {};
-    try {
-      console.log(a.b.c)
-    } catch (error) {
-      throw new BusinessException("参数错误");
-    }
-    return "OK"
-  }
-
-  @Get('getTestName')
-  getTestName() {
-    return this.configService.get('TEST_VALUE').name;
-  }
 }
